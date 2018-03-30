@@ -1,0 +1,28 @@
+{
+  "name": "techgurus",
+  "version": "1.0.0",
+  "description": "Smart India Hackathon '18 as team name 'TechGurus'",
+  "main": "index.js",
+  "productName": "CostCalculator",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhawesh96/sih18.git"
+  },
+  "author": "Bhawesh Bhansali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhawesh96/sih18/issues"
+  },
+  "homepage": "https://github.com/bhawesh96/sih18#readme",
+  "dependencies": {
+    "electron-devtools-installer": "^2.2.3",
+    "electron-reload": "^1.2.2"
+  },
+  "devDependencies": {
+    "electron": "^1.8.4",
+    "electron-packager": "^11.2.0"
+  }
+}
