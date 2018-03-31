@@ -4,14 +4,40 @@ var mysql = require('mysql');
 
 // DB connection
 var connection = mysql.createConnection({
-	host     : '139.59.46.30',
+	host     : 'beehivesoftech.co.in',
 	port     :  '3306',
-	user     : 'root',
-	password : 'password',
-	database : 'sih2018'
+	user     : 'beehipfc_root',
+	password : 'randomise',
+	database : 'beehipfc_sih18'
 })
 connection.connect(function(err) {
 });
+
+var user;
+var total=0;
+var sort_count, book_count, deli_count;
+var factors = {}
+
+var query = connection.query("SELECT * FROM factors", function(err, res, f) {
+	factors = {
+		bookf: res[0].bookf,
+		sortf: res[0].sortf,
+		delif: res[0].delif,
+		distf: res[0].distf
+	}
+	$('#bookf').val(factors.bookf)
+	$('#sortf').val(factors.sortf)
+	$('#delif').val(factors.delif)
+	$('#distf').val(factors.distf)
+
+});
+
+$('#updateFactors').click(function(e) {
+	e.preventDefault();
+	var queryStr = "UPDATE factors SET bookf='" +$('#bookf').val()+"',sortf='"+$('#sortf').val()+"',delif='"+$('#delif').val()+"',distf='"+$('#distf').val()+"'";
+	console.log(queryStr);
+	var query = connection.query(queryStr)
+})
 
 var slat=slon=dlat=dlon=0.0;
 
@@ -82,6 +108,11 @@ $('#loginSubmit').click(function(e) {
 
 	var query = connection.query("SELECT * FROM users WHERE username='"+user+"' AND password='"+pass+"'", function(err, res, fields) {
 		if(res[0]) {
+			if(res[0].username == 'admin') {
+				user = 'admin';
+				window.location.href="admin.html"
+				return;
+			}
 			window.location.href="home.html"
 		}
 		if(!res[0]) {
@@ -112,7 +143,7 @@ function calcDist(slatx, slonx, dlatx, dlonx) {
 	var dist = 6373.0*c;
 
 	var buffer_dist = dist*1.15;
-	var dist_cost = buffer_dist * 0.005;
+	var dist_cost = buffer_dist * factors.distf;
 	return (dist_cost);
 }
 
@@ -187,5 +218,47 @@ $('#calcCost').click(function(e) {
 	alert("Distance cost = " + (dist_src_rms+dist_dest_rms+dist_srms_drms) + "\n\nWeight and Volume cost = " + cost +"\n\nTotal = " + (cost+dist_src_rms+dist_dest_rms+dist_srms_drms));
 })
 
+// ==========================================================================================
+// ADMIN
+
+if(user == 'admin' || true) {
+	var query = connection.query("SELECT DISTINCT empid from BLAH ORDER BY empid DESC", function(err, res, f) {
+		for(var x of res) {
+			$('#empid').append($('<option>', {
+			    value: x.empid,
+			    text: x.empid
+			}));
+		}
+	});
+
+	$('#getDetails').click(function(e) {
+		e.preventDefault();
+		total=0;
+		sort_count=book_count=deli_count=0;
+
+		var query = "SELECT count(action) AS total FROM BLAH WHERE action='S' GROUP BY empid HAVING empid='" + $('#empid').val() + "'";
+		connection.query(query, function(err, res, f) {
+			sort_count = res[0].total || 0;
+			total+=parseInt(sort_count)*parseInt(factors.sortf);
+		});
+
+		var query = "SELECT count(action) AS total FROM BLAH WHERE action='B' GROUP BY empid HAVING empid='" + $('#empid').val() + "'";
+		connection.query(query, function(err, res, f) {
+			book_count = res[0].total || 0;
+			total+=parseInt(book_count)*parseInt(factors.bookf);
+		});
+
+		var query = "SELECT count(action) AS total FROM BLAH WHERE action='D' GROUP BY empid HAVING empid='" + $('#empid').val() + "'";
+		connection.query(query, function(err, res, f) {
+			deli_count = res[0].total || 0;
+			total+=parseInt(deli_count)*parseInt(factors.delif);
+		});
+
+		console.log(total);
+		setTimeout(function() {
+			alert("Bookings: " +book_count+ "\nSortings: " +sort_count+ "\nDeliveries: " +deli_count+ "\n\nTotal Salary: " + total)
+		}, 500);
+	})
+}
 
 }); // end document.ready

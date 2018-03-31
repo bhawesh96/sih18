@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TechGurus</title>
+        <link rel="stylesheet" href="./css/main.css">
+        
+    </head>
+<body>
+<a href="index.html">LOGOUT</a>
+<div class="form">
+      <form>
+      
+        <h1>Admin</h1>
+        
+        <fieldset>
+          <legend><strong>Normalization Factors</strong></legend>
+
+          <div class="flex lr-container">
+
+          <div class="half-width" style="width: 20%">
+            <label>Booking Factor</label>
+            <input type="text" id="bookf">
+          </div>
+
+          <div class="half-width" style="width: 20%">
+            <label>Sorting Factor</label>
+            <input type="text" id="sortf">
+          </div>
+
+          <div class="half-width" style="width: 20%">
+            <label>Delivering Factor</label>
+            <input type="text" id="delif">
+          </div>
+
+          <div class="half-width" style="width: 20%">
+            <label>Distance Factor</label>
+            <input type="text" id="distf">
+          </div>
+
+        </fieldset>
+        <div style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-top: -50px;">
+          <button id="updateFactors" style="width: 20%; margin-top: 0px;">Update</button>
+        </div>
+
+        <fieldset>
+          <legend><strong>Employee Details</strong></legend>
+
+          <div class="flex lr-container">
+
+          <div class="half-width">
+              <label>Employee Id</label>
+              <select id="empid">
+              </select>
+          </div>
+        </fieldset>
+
+        <div style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-top: -50px;">
+          <button id="getDetails" style="width: 20%; margin-top: 0px;">Get Details</button>
+        </div>
+
+        
+      </form>
+</div>
+
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+<script type="text/javascript" src="./js/jq.js"></script>
+<script type="text/javascript" src="./js/myscript.js"></script>
+
+<script>if (window.module) module = window.module;</script>
+
+
+</body></html>
