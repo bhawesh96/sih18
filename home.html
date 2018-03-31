@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TechGurus</title>
+        <link rel="stylesheet" href="./css/main.css">
+        
+    </head>
+<body>
+<a href="index.html">LOGOUT</a>
+<div class="form">
+      <form>
+      
+        <h1>Cost Calculator</h1>
+        
+        <fieldset>
+          <legend><span class="number">1</span>Location Info</legend>
+
+          <div class="flex lr-container">
+            <div class="half-width">
+              <label style="font-size: 1rem; font-weight: 700;">Source</label>
+            </div>
+
+            <div class="half-width">
+              <label style="font-size: 1rem; font-weight: 700;">Destination</label>
+            </div>
+          </div>
+
+          <div class="flex lr-container">
+
+          <div class="half-width">
+            <label>Pincode</label>
+            <input type="number" id="src-pincode">
+            <label>City, State</label>
+            <input type="text" readonly id="src-cityState">
+          </div>
+          
+          <div class="half-width">
+            <label>Pincode</label>
+            <input type="number" id="dest-pincode">
+            <label>City, State</label>
+            <input type="text" readonly id="dest-cityState">
+          </div>
+
+        </fieldset>
+
+        <div style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-top: -50px;">
+          <button id="calcDistance" style="width: 20%; margin-top: 0px;">Calculate Distance Cost</button>
+        </div>
+
+        <fieldset>
+          <legend><span class="number">2</span>Consignment Details</legend>
+
+          <div class="flex lr-container">
+        
+            <div class="half-width">
+              <label>Service Type</label>
+              <select name="service-type" id="service-type">
+                <option value="letter">Letter</option>
+                <option value="parcel">Parcel</option>
+                <option value="speedPost">Speed Post</option>
+                <option value="bookPacket">Book Packet</option>
+              </select>
+            </div>
+          </div>
+
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <label>Weight</label>
+                <input type="number" id="weight">
+              </div>
+              <div id="dimensions">
+                <label>Length</label>
+                <input type="number" id="length">
+              </div>
+              <div id="dimensions">
+                <label>Breadth</label>
+                <input type="number" id="breadth">
+              </div>
+              <div id="dimensions">
+                <label>Height</label>
+                <input type="number" id="height">
+              </div>
+            </div>
+
+        </fieldset>
+        <div style="display: flex; justify-content: center; flex-direction: column; align-items: center; margin-top: -50px;">
+          <button id="calcCost" style="width: 35%; margin-top: 0px;">Calculate Weight+Volumne Cost</button>
+        </div>
+<!--         <fieldset>
+          <legend><span class="number">2</span>General Questions</legend>
+          <label for="bio">Why do you want to attend TEDxManipalUniversity?*</label>
+          <textarea id="whyAttend" name="whyAttend" required=""></textarea>
+          <label for="bio">What can you take back from the event?*</label>
+          <textarea id="whatTake" name="whatTake" required=""></textarea>
+        </fieldset>
+        <fieldset>
+        <label for="job">Which idea / speaker are you most excited about and why?*</label>
+        <select id="favSpeaker" name="favSpeaker" required="">
+            <option value="1">Tushar Lall</option>
+            <option value="2">Dr. M.S Valiathan</option>
+            <option value="3">Lohit Sahu</option>
+            <option value="4">Sanah Rizwi</option>
+            <option value="5">Dwiref Oza</option>
+            <option value="6">Padmanabh Panditl</option>
+            <option value="7">Ganesh Nayak</option>
+            <option value="8">Anand Sudarshan</option>
+            <option value="9">Avani Awasthee</option>
+            <option value="10">Gevee George</option>
+            <option value="11">Sabyasachi Sengupta</option>
+        </select>
+
+          <textarea id="excited" name="excited" placeholder="I am excited because..."></textarea>
+        
+          <label for="bio">Please mention about your contribution to the society (if any)</label>
+          <textarea id="contribution" name="contribution"></textarea>
+        
+        </fieldset> -->
+        <!-- <button id="submit">Submit</button> -->
+      </form>
+</div>
+
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+<script type="text/javascript" src="./js/jq.js"></script>
+<script type="text/javascript" src="./js/myscript.js"></script>
+
+<script>if (window.module) module = window.module;</script>
+
+
+</body></html>

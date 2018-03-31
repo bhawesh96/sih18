@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Nunito', sans-serif;
-  color: #384047;
+  color: #b52a25;
 }
 
 span{
@@ -17,15 +17,17 @@ span{
 }
 
 form {
-  max-width: 300px;
+  width: 80%;
   margin: 10px auto;
   margin-top: 5%;
   padding: 10px 20px;
   background: #f4f7f8;
   border-radius: 8px;
 }
-.form{
-  display: none;
+
+#auth {
+  width: 40%;
+  padding: 50px;
 }
 
 h1 {
@@ -81,13 +83,13 @@ select {
 button {
   padding: 12px;
   color: #FFF;
-  background-color: #4bc970;
+  background-color: #b52a25;
   font-size: 18px;
   text-align: center;
   font-style: normal;
   border-radius: 5px;
   width: 100%;
-  border: 1px solid #3ac162;
+  border: 1px solid #b52a25;
   border-width: 1px 1px 3px;
   box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
   margin-bottom: 10px;
@@ -118,7 +120,7 @@ label.light {
 }
 
 .number {
-  background-color: #5fcf80;
+  background-color: #b52a25;
   color: #fff;
   height: 30px;
   width: 30px;
@@ -133,18 +135,24 @@ label.light {
 button:hover{
   cursor: pointer;
 }
-@media screen and (min-width: 480px) {
+ 
+@media screen and (max-width: 480px) {
 
-  form {
-    max-width: 480px;
-  }
  
 }
 @media (max-width: 480px){
   .acceptbutton{
-  width: 80%;
-  margin-left: 10%;
-}
+    width: 80%;
+    margin-left: 10%;
+  }
+
+ form {
+    width: 90%;
+  }
+
+  #auth {
+    width: 100%;
+  }
 }
 
 .half-width {
@@ -154,4 +162,16 @@ button:hover{
 .lr-container {
   display: flex;
   justify-content: space-between;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+#dimensions {
+  display: none;
 }

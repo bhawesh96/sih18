@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/bhawesh96/sih18#readme",
   "dependencies": {
+    "electron-builder": "^20.8.1",
     "electron-devtools-installer": "^2.2.3",
-    "electron-reload": "^1.2.2"
+    "electron-reload": "^1.2.2",
+    "mysql": "^2.15.0"
   },
   "devDependencies": {
     "electron": "^1.8.4",

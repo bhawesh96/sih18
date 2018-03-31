@@ -3,87 +3,39 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TechGurus</title>
         <link rel="stylesheet" href="./css/main.css">
-        <script type="text/javascript" src="./js/jq.js"></script>
-        <script type="text/javascript" src="./js/myscript.js"></script>
+        
     </head>
 <body>
-<div class="form" style="display: block;">
-      <form>
+<div class="form">
+      <form id="auth">
       
-        <h1>Cost Calculator</h1>
+        <h1>Authentication</h1>
         
         <fieldset>
-          <legend><span class="number">1</span>Location Info</legend>
-
-          <div class="flex lr-container">
-            <div class="half-width">
-              <label>Source</label>
-              <select name="source">
-                <option selected disabled></option>
-                <option value="mumbai">Mumbai</option>
-                <option value="delhi">Delhi</option>
-                <option value="kolkata">Kolkata</option>
-                <option value="chennai">Chennai</option>
-              </select>
-            </div>
-
-            <div class="half-width">
-              <label>Destination</label>
-              <select name="destination">
-                <option selected disabled></option>
-                <option value="delhi">Delhi</option>
-                <option value="mumbai">Mumbai</option>
-                <option value="kolkata">Kolkata</option>
-                <option value="chennai">Chennai</option>
-              </select>
-            </div>
+        
+          <div>
+            <label>Username</label>
+            <input type="text" id="username" required>
           </div>
-
-          <label for="mail">Email*</label>
-          <input type="email" id="email" name="email" required="">
           
-          <label for="phone">Phone*</label>
-          <input type="text" id="phone" name="phone" required="">
+          <div>
+            <label>Password</label>
+            <input type="password" id="password" required>
+          </div>
           
-          <!-- <label>Age:</label>
-          <input type="radio" id="under_13" value="under_13" name="user_age"><label for="under_13" class="light">Under 13</label><br>
-          <input type="radio" id="over_13" value="over_13" name="user_age"><label for="over_13" class="light">13 or older</label> -->
         </fieldset>
-        
-        <fieldset>
-          <legend><span class="number">2</span>General Questions</legend>
-          <label for="bio">Why do you want to attend TEDxManipalUniversity?*</label>
-          <textarea id="whyAttend" name="whyAttend" required=""></textarea>
-          <label for="bio">What can you take back from the event?*</label>
-          <textarea id="whatTake" name="whatTake" required=""></textarea>
-        </fieldset>
-        <fieldset>
-        <label for="job">Which idea / speaker are you most excited about and why?*</label>
-        <select id="favSpeaker" name="favSpeaker" required="">
-            <option value="1">Tushar Lall</option>
-            <option value="2">Dr. M.S Valiathan</option>
-            <option value="3">Lohit Sahu</option>
-            <option value="4">Sanah Rizwi</option>
-            <option value="5">Dwiref Oza</option>
-            <option value="6">Padmanabh Panditl</option>
-            <option value="7">Ganesh Nayak</option>
-            <option value="8">Anand Sudarshan</option>
-            <option value="9">Avani Awasthee</option>
-            <option value="10">Gevee George</option>
-            <option value="11">Sabyasachi Sengupta</option>
-        </select>
 
-          <!-- <label for="bio">Why?</label> -->
-          <textarea id="excited" name="excited" placeholder="I am excited because..."></textarea>
         
-          <label for="bio">Please mention about your contribution to the society (if any)</label>
-          <textarea id="contribution" name="contribution"></textarea>
-        
-        </fieldset>
-        <button id="submit">Submit</button>
+        <button id="loginSubmit">Login</button>
       </form>
 </div>
-    
+
+<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+<script type="text/javascript" src="./js/jq.js"></script>
+<script type="text/javascript" src="./js/myscript.js"></script>
+
+<script>if (window.module) module = window.module;</script>
 
 
 </body></html>
