@@ -3,13 +3,22 @@ $(document).ready(function() {
 var mysql = require('mysql');
 
 // DB connection
+// var connection = mysql.createConnection({
+// 	host     : 'beehivesoftech.co.in',
+// 	port     :  '3306',
+// 	user     : 'beehipfc_root',
+// 	password : 'randomise',
+// 	database : 'beehipfc_sih18'
+// })
+
 var connection = mysql.createConnection({
-	host     : 'beehivesoftech.co.in',
+	host     : 'localhost',
 	port     :  '3306',
-	user     : 'beehipfc_root',
-	password : 'randomise',
-	database : 'beehipfc_sih18'
+	user     : 'root',
+	password : 'password',
+	database : 'sihlocal'
 })
+
 connection.connect(function(err) {
 });
 
